@@ -67,5 +67,55 @@ function encenderLuces() {
 function encenderRegador() {
   let regaderaCheckbox = document.getElementById('regaderaCheckbox')
   let imgPlanta = document.getElementById('imgPlanta')
-  alert('vas a encneder el regador')
+  if (regaderaCheckbox.checked){
+    fetch(`http://localhost:2223/encender/bomba`)
+    .then(respuesta => {
+      if (!respuesta.ok){
+        throw new Error ('Algo salio mal')
+      }
+      imgPlanta.style.filter = 'brightness(1)'
+    })
+    .catch( err => {
+      alert(err)
+    })
+  }else{
+    fetch(`http://localhost:2223/apagar/bomba`)
+    .then(respuesta => {
+      if (!respuesta.ok){
+        throw new Error ('Algo salio mal')
+      }
+      imgPlanta.style.filter = 'brightness(0.5)'
+    })
+    .catch( err => {
+      alert(err)
+    })
+  }
+}
+
+function onOffVentilador() {
+  let ventiladorCheckbox = document.getElementById('ventiladorCheckbox')
+  let imgVentilador = document.getElementById('imgVentilador')
+  if (ventiladorCheckbox.checked){
+    fetch(`http://localhost:2223/encender/ventilador`)
+    .then(respuesta => {
+      if (!respuesta.ok){
+        throw new Error ('Algo salio mal')
+      }
+      imgVentilador.style.filter = 'brightness(1)'
+    })
+    .catch( err => {
+      alert(err)
+    })
+  }else{
+    fetch(`http://localhost:2223/apagar/ventilador`)
+    .then(respuesta => {
+      if (!respuesta.ok){
+        throw new Error ('Algo salio mal')
+      }
+      imgVentilador.style.filter = 'brightness(0.5)'
+    })
+    .catch( err => {
+      alert(err)
+    })
+  }
 }
