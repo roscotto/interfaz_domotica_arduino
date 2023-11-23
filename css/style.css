@@ -86,3 +86,11 @@ img{
   .bg-cards {
     background-color: rgba(232, 57, 248, 0.158)!important;
   }
+
+  #imgFoco{
+    filter: brightness(0.5);
+  }
+
+  #imgPlanta{
+    filter: brightness(0.5);
+  }

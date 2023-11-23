@@ -34,11 +34,11 @@
           <div class="row d-flex justify-content-center">
             <div class="col-4 col-lg-3">
               <img src="/img/temperature.png" class="ratio " alt="">
-              <p class="pt-2 h5"> <b>22 °C</b></p>
+              <p class="pt-2 h5 fw-bold" id="temperaturaVisor"></p>
             </div>
             <div class="col-7 col-lg-8 d-flex align-items-center justify-content-center">
               <div class="d-flex justify-content-center">
-                <button class="btn btn-light fw-bold">Medir temperatura</button>
+                <button onclick="medirTemperatura()" class="btn btn-light fw-bold">Medir temperatura</button>
               </div>
 
             </div>
@@ -48,11 +48,11 @@
           <div class="row d-flex justify-content-center">
             <div class="col-4 col-lg-3">
               <img src="/img/humidity.png" class="ratio " alt="">
-              <p class="pt-2 h5"> <b>80 %</b></p>
+              <p class="pt-2 h5 fw-bold" id="humedadVisor"> </p>
             </div>
             <div class="col-7 col-lg-8 d-flex align-items-center justify-content-center">
               <div class="d-flex justify-content-center">
-                <button class="btn btn-light fw-bold">Medir humedad</button>
+                <button onclick="medirHumedad()" class="btn btn-light fw-bold">Medir humedad</button>
               </div>
 
             </div>
@@ -61,14 +61,14 @@
         <div class="col-12 col-lg-4  bg-cards text-center align-middle px-4 py-4  rounded-3 btn m-2 shadow-sm">
           <div class="row d-flex justify-content-center">
             <div class="col-4 col-lg-3 col-lg-3">
-              <img src="/img/light.png" class="ratio " alt="">
+              <img src="/img/light.png" class="ratio " id="imgFoco" alt="imagen de foco">
             </div>
             <div class="col-7 col-lg-8 col-lg-8">
               <div>
                 <h3 class="h4">Luces</h3>
               </div>
               <label class="switch">
-                <input type="checkbox">
+                <input onchange="encenderLuces()"  id="onOffCheckbox"type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -77,14 +77,14 @@
         <div class="col-12 col-lg-4  bg-cards text-center align-middle px-4 py-4  rounded-3 btn m-2 shadow-sm">
           <div class="row d-flex justify-content-center">
             <div class="col-4 col-lg-3 col-lg-3">
-              <img src="/img/plant.png" class="ratio " alt="">
+              <img src="/img/plant.png" class="ratio " id="imgPlanta" alt="imagen de planta">
             </div>
             <div class="col-7 col-lg-8 col-lg-8">
               <div>
                 <h3 class="h4">Regadores</h3>
               </div>
               <label class="switch">
-                <input type="checkbox">
+                <input onchange="encenderRegador()" type="checkbox">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -96,6 +96,6 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>
 </body>
-<script></script>
+<script src="./js/main.js"></script>
 
 </html>
